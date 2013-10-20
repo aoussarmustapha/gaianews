@@ -22,27 +22,82 @@
 	font-family: Arial;
 	line-height: 30px;
 	height:30px;
+	border-bottom: 1px solid #DDD;
+	position:relative;
 }
+.header #topbar .date{
+	position:absolute;
+	left:42%;
+}
+/** social **/
+.header #topbar .socials{
+	position: absolute;
+	right: 8px;
+	top: 3px;
+}
+.header #topbar .social{
+	margin-left: 4px;
+	background-position:0 0;
+	background-repeat:no-repeat;
+	width:26px;
+	height:25px;
+	float:left;
+}
+.header #topbar a.fb{
+	background-image:url(images/icone/icon-facebook.png);
+}
+.header #topbar a.tw{
+	background-image:url(images/icone/icon-twitter.png);
+}
+.header #topbar a.gp{
+	background-image:url(images/icone/icon-googleplus.png);
+}
+.header #topbar a.yt{
+	background-image:url(images/icone/icon-youtube.png);
+}
+
 .header_viaggi {
 	background-image:url(images/struttura/sfondo_header_viaggi.jpg);
 }
-.header a.home {
+.header .heading {
 	display:block;
 	width:100%;
 	height:100px;
 	text-align:center;
 }
-.header a.home img {
+.header .heading img {
 	padding-top: 30px;
 }
-.header a.home .logo {
+.header .heading .logo {
 	float: none;
 }
-.header a.cat .logo {
+.header .cat h1 {
+	padding-left: 15px;
+	overflow: hidden;
+	float: left;
+	padding-top: 30px;
+}
+.header .cat .category-title,
+.header .cat .logo {
 	float:left;
 }
-.header a.cat img {
+.header .cat .logo {
+	margin-right: 8px;
+}
+.header .cat img {
+	padding-top: 12px;
 	width:120px;
+}
+.ads {
+	text-align: center;
+}
+.header .cat .ads {
+	float: right;
+}
+.header a.category-title {
+	background: #7FBA55 !important;
+	color: #FFF;
+	line-height: 35px;
 }
 .header_print {
 	display:none;
@@ -209,42 +264,16 @@
 	margin:15px 0px 0px 0px;
 	position:relative;
 }
-/** social **/
-.header .banner a.social{
-	position:absolute;
-	background-image:url(images/icone/social.jpg);
-	display:block;
-	height:49px;
-	width:50px;
-	top:0px;
-}
-.header .banner a.fb{
-	left:745px;
-	background-position:0px 0px;	
-}
-.header .banner a.tw{
-	left:800px;
-	background-position:-54px 0px;	
-}
-.header .banner a.gp{
-	left:855px;
-	background-position:-108px 0px;	
-}
-.header .banner a.yt{
-	left:910px;
-	background-position:-163px 0px;	
-}
 /** ricerca **/
-.header .banner .ricerca{
+.header .menu_nav .ricerca{
 	position:absolute;
 	height:49px;
-	top:65px;
-	left:745px;
+	right:0;
 }
-.header .banner .ricerca #cse-search-box input[type="text"]{
+.header .menu_nav .ricerca #cse-search-box input[type="text"]{
 	width:145px;
 }
-.header .banner .ricerca #cse-search-box input[type="submit"]{
+.header .menu_nav .ricerca #cse-search-box input[type="submit"]{
 	padding:0px 10px;
 	border:1px solid #125F89;
 	padding:1px 6px;

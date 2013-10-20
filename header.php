@@ -51,80 +51,65 @@
 
 </head>
 <body>
-
-<img src="<?php bloginfo('template_url'); ?>/images/struttura/sfondo_header.jpg" width="960" height="100" alt="Gaianews" class="header_print" />
+<?php 
+	if (is_home()) {
+		$thisCatName = '';
+	} else {
+		$is_Cat = 'cat';
+		$thisCatId = get_query_var('cat');
+		$thisCat = get_category($thisCatId,false);
+		$thisCatSlug = $thisCat->slug;
+		$thisCatName = $thisCat->cat_name;
+	}
+?>
 <div class="page_wrapper">
+<div class="ads top"><?php if (is_home()): include ("ads.php"); echo pubHeader(); endif ?></div>
 <div class="header">
 	<div id="main_header">
 		<div class="container-fluid">
 			<div id="topbar">
-				<?php echo date('l jS F Y'); ?>
+				<span class="date"><?php echo date('l jS F Y'); ?></span>
+				<span class="socials">
+					<a href="https://www.facebook.com/Gaianews.it" class="social fb" title="Seguici su Facebook" target="_blank"></a>
+					<a href="https://twitter.com/Gaianews" class="social tw" title="Seguici su Twitter" target="_blank"></a>
+					<a href="https://plus.google.com/u/0/104688499858525986145" class="social gp" title="Seguici su Google+" target="_blank"></a>
+					<a href="http://www.youtube.com/user/gaianewsitalia" class="social yt" title="Seguici su YouTube" target="_blank"></a>
+				</span>
 			</div>
-			<h1>
-				<?php 
-					if (is_home()) {
-						//nessuna classe
-					} else {
-						$is_Cat = 'cat';
-					}
-				?>
-				<a class="home <?php echo $is_Cat; ?>" href="/" title="homepage">
-					<div class="logo">
-						<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Gaianews" />
-					</div>
-					
-					<div class="logo category">       
-						<?php 
-						if (is_home()) {
-							$thisCatName = '';
-						} else {
-							$thisCatId = get_query_var('cat');
-							$thisCat = get_category($thisCatId,false);
-							$thisCatSlug = '| '.$thisCat->slug;
-							$thisCatName = '| '.$thisCat->cat_name;
-						?>
-						<script type="text/javascript">
-							<!--
-							google_ad_client = "ca-pub-1417052182885260";
-							/* BANNER HEADER */
-							google_ad_slot = "2757807039";
-							google_ad_width = 728;
-							google_ad_height = 90;
-							//-->
-						</script>
-						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+			<div class="heading <?php echo $is_Cat; ?>">
+				<h1>			
+					<a class="home" href="/" title="homepage">
+						<div class="logo">
+							<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Gaianews" />
+						</div>
+					</a>
+					<a class="category-title" href="#">       
 						<?php
-							}
 							echo '<span>'.$thisCatName.'</span>';
 						?>					
-					</div>
-				</a>
-			</h1>
+					</a>
+				</h1>
+				<div class="ads">
+					<?php if (! is_home()) { include ("ads.php"); echo pubHeader(); } ?>
+				</div>
+			</div>
 		</div>
 	</div>			
   <div class="menu_nav">
       <?php wp_nav_menu(array(
 				'theme_location' => 'navigazione',
 				'container' => false, 
-			)); ?> 
+			)); ?>
+		<div class="ricerca">
+		  <form action="http://www.google.it" id="cse-search-box">
+			<div>
+			  <input type="hidden" name="cx" value="partner-pub-9411647215177959:6546513870" />
+			  <input type="hidden" name="ie" value="UTF-8" />
+			  <input type="text" name="q" size="40" />
+			  <input type="submit" name="sa" value="Cerca" />
+			</div>
+		  </form>      
+		  <script type="text/javascript" src="http://www.google.it/coop/cse/brand?form=cse-search-box&amp;lang="></script>
+		</div>
   </div>
-  <div class="banner">
-		
-    <a href="https://www.facebook.com/Gaianews.it" class="social fb" title="Seguici su Facebook" target="_blank"></a>
-    <a href="https://twitter.com/Gaianews" class="social tw" title="Seguici su Twitter" target="_blank"></a>
-    <a href="https://plus.google.com/u/0/104688499858525986145" class="social gp" title="Seguici su Google+" target="_blank"></a>
-    <a href="http://www.youtube.com/user/gaianewsitalia" class="social yt" title="Seguici su YouTube" target="_blank"></a>
-    <div class="ricerca">
-      <form action="http://www.google.it" id="cse-search-box">
-        <div>
-          <input type="hidden" name="cx" value="partner-pub-9411647215177959:6546513870" />
-          <input type="hidden" name="ie" value="UTF-8" />
-          <input type="text" name="q" size="40" />
-          <input type="submit" name="sa" value="Cerca" />
-        </div>
-      </form>      
-      <script type="text/javascript" src="http://www.google.it/coop/cse/brand?form=cse-search-box&amp;lang="></script>
-    </div>
-  </div>
-  
 </div>
