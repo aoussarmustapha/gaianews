@@ -55,7 +55,51 @@
 <img src="<?php bloginfo('template_url'); ?>/images/struttura/sfondo_header.jpg" width="960" height="100" alt="Gaianews" class="header_print" />
 <div class="page_wrapper">
 <div class="header">
-  <a class="home" href="/" title="homepage"></a>
+	<div id="main_header">
+		<div class="container-fluid">
+			<div id="topbar">
+				<?php echo date('l jS F Y'); ?>
+			</div>
+			<h1>
+				<?php 
+					if (is_home()) {
+						$classHome = 'homePage';
+					}
+				?>
+				<a class="home <?php echo $classHome; ?>" href="/" title="homepage">
+					<div class="logo">
+						<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Gaianews" />
+					</div>
+					
+					<div class="logo category">       
+						<?php 
+						if (is_home()) {
+							$thisCatName = '';
+						} else {
+							$thisCatId = get_query_var('cat');
+							$thisCat = get_category($thisCatId,false);
+							$thisCatSlug = '| '.$thisCat->slug;
+							$thisCatName = '| '.$thisCat->cat_name;
+						?>
+						<script type="text/javascript">
+							<!--
+							google_ad_client = "ca-pub-1417052182885260";
+							/* BANNER HEADER */
+							google_ad_slot = "2757807039";
+							google_ad_width = 728;
+							google_ad_height = 90;
+							//-->
+						</script>
+						<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+						<?php
+							}
+							echo '<span>'.$thisCatName.'</span>';
+						?>					
+					</div>
+				</a>
+			</h1>
+		</div>
+	</div>			
   <div class="menu_nav">
       <?php wp_nav_menu(array(
 				'theme_location' => 'navigazione',
@@ -63,17 +107,7 @@
 			)); ?> 
   </div>
   <div class="banner">
-		<script type="text/javascript">
-		<!--
-    google_ad_client = "ca-pub-1417052182885260";
-    /* BANNER HEADER */
-    google_ad_slot = "2757807039";
-    google_ad_width = 728;
-    google_ad_height = 90;
-    //-->
-    </script>
-    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-    </script>
+		
     <a href="https://www.facebook.com/Gaianews.it" class="social fb" title="Seguici su Facebook" target="_blank"></a>
     <a href="https://twitter.com/Gaianews" class="social tw" title="Seguici su Twitter" target="_blank"></a>
     <a href="https://plus.google.com/u/0/104688499858525986145" class="social gp" title="Seguici su Google+" target="_blank"></a>

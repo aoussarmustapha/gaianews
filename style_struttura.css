@@ -57,6 +57,10 @@ ul {
 	padding:0px 0px 20px 0px;
 	overflow:hidden;
 }
+.container-fluid {
+	width:1024px;
+	margin:0 auto;
+}
 /******** dettaglio ********/
 .page_body .dettaglio h1 {
 	font-size:1.8em;
