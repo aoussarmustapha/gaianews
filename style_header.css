@@ -36,10 +36,13 @@
 	padding-top: 30px;
 }
 .header a.home .logo {
+	float: none;
+}
+.header a.cat .logo {
 	float:left;
 }
-.header a.homePage .logo {
-	float: none;
+.header a.cat img {
+	width:120px;
 }
 .header_print {
 	display:none;

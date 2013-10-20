@@ -63,10 +63,12 @@
 			<h1>
 				<?php 
 					if (is_home()) {
-						$classHome = 'homePage';
+						//nessuna classe
+					} else {
+						$is_Cat = 'cat';
 					}
 				?>
-				<a class="home <?php echo $classHome; ?>" href="/" title="homepage">
+				<a class="home <?php echo $is_Cat; ?>" href="/" title="homepage">
 					<div class="logo">
 						<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Gaianews" />
 					</div>
