@@ -90,15 +90,43 @@
 }
 .ads {
 	text-align: center;
-}
-.header .cat .ads {
-	float: right;
+	margin-bottom: 5px;
 }
 .header a.category-title {
-	background: #7FBA55 !important;
 	color: #FFF;
 	line-height: 35px;
+	padding: 0px 8px;
 }
+/****** ambiente *******/
+.header a.cat-3 {
+	background: #01AAD5;
+}
+/****** attualità *******/
+.header a.cat-1 {
+	background: #F39D0A;
+}
+/****** cultura *******/
+.header a.cat-9 {
+	background: #893363;
+}
+/****** green economy *******/
+.header a.cat-2736 {
+	background: #6BAD30;
+}
+/****** salute *******/
+.header a.cat-7 {
+	background: #3F9F9E;
+}
+/****** scienza *******/
+.header a.cat-210 {
+	background: #79A0C1;
+}
+/****** viaggi *******/
+.header a.cat-22 {
+	background: #01AAD5;
+}
+
+
 .header_print {
 	display:none;
 }
@@ -258,11 +286,6 @@
 .header .menu_nav > ul > li.current-post-ancestor.menu-item-31214 .sub-menu,
 .header .menu_nav > ul > li.current-menu-parent.menu-item-31214 .sub-menu{
 	background-color:#4795DD;	
-}
-/****** banner *******/
-.header .banner {
-	margin:15px 0px 0px 0px;
-	position:relative;
 }
 /** ricerca **/
 .header .menu_nav .ricerca{

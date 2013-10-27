@@ -61,9 +61,11 @@
 		$thisCatSlug = $thisCat->slug;
 		$thisCatName = $thisCat->cat_name;
 	}
+	
+	$category = get_category( get_query_var( 'cat' ) );
+    $cat_id = $category->cat_ID;
 ?>
 <div class="page_wrapper">
-<div class="ads top"><?php if (is_home()): include ("ads.php"); echo pubHeader(); endif ?></div>
 <div class="header">
 	<div id="main_header">
 		<div class="container-fluid">
@@ -83,15 +85,12 @@
 							<img src="<?php bloginfo('template_url'); ?>/images/logo.png" alt="Gaianews" />
 						</div>
 					</a>
-					<a class="category-title" href="#">       
+					<a class="category-title <?php echo 'cat-'.$cat_id; ?>" href="#">       
 						<?php
 							echo '<span>'.$thisCatName.'</span>';
 						?>					
 					</a>
 				</h1>
-				<div class="ads">
-					<?php if (! is_home()) { include ("ads.php"); echo pubHeader(); } ?>
-				</div>
 			</div>
 		</div>
 	</div>			
@@ -112,4 +111,11 @@
 		  <script type="text/javascript" src="http://www.google.it/coop/cse/brand?form=cse-search-box&amp;lang="></script>
 		</div>
   </div>
+  
+  <div class="ads top"><?php if (is_home()): include ("ads.php"); echo pubHeader(); endif ?></div>
+  
+  <div class="ads">
+			<?php if (! is_home()) { include ("ads.php"); echo pubHeader(); } ?>
+  </div>
+  
 </div>
